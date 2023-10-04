@@ -30,7 +30,7 @@ ServerNetwork::ServerNetwork(void)
 	hints.ai_flags = AI_PASSIVE;
 
 	// Resolve the server address and port
-	iResult = getaddrinfo(NULL, DEFAULT_PORT, &hints, &result);
+	iResult = getaddrinfo(NULL, LISTEN_PORT, &hints, &result);
 
 	if (iResult != 0) {
 		printf("getaddrinfo failed with error: %d\n", iResult);
@@ -58,6 +58,7 @@ ServerNetwork::ServerNetwork(void)
 		WSACleanup();
 		exit(1);
 	}
+	// binding one
 
 	// Setup the TCP listening socket
 	iResult = bind(ListenSocket, result->ai_addr, (int)result->ai_addrlen);
@@ -73,6 +74,8 @@ ServerNetwork::ServerNetwork(void)
 	// no longer need address information
 	freeaddrinfo(result);
 
+	std::cout << "\nListening for connection\n";
+
 	// start listening for new clients attempting to connect
 	iResult = listen(ListenSocket, SOMAXCONN);
 
@@ -82,6 +85,9 @@ ServerNetwork::ServerNetwork(void)
 		WSACleanup();
 		exit(1);
 	}
+
+
+
 }
 
 bool ServerNetwork::acceptNewClient(unsigned int& id)

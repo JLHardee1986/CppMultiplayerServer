@@ -1,6 +1,10 @@
 #include <string.h>
 
 #define MAX_PACKET_SIZE 1000000
+#define IP_ADDRESS_BUFFER_LENGTH_C_STR 10
+#define IP_ADDRESS_BUFFER_LENGTH_STR 9
+#define PORT_MINE 12345
+
 
 enum PacketTypes {
 
@@ -9,6 +13,8 @@ enum PacketTypes {
 	ACTION_EVENT = 1,
 
 };
+
+
 
 struct Packet {
 

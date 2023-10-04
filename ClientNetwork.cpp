@@ -21,8 +21,10 @@ ClientNetwork::ClientNetwork(void) {
 		printf("WSAStartup failed with error: %d\n", iResult);
 		exit(1);
 	}
-
-
+	std::string ipOfClient = "";
+	//get ip from user
+	std::cout << "\nType IP of other machine: ";
+	std::cin >> ipOfClient;
 
 	// set address info
 	ZeroMemory(&hints, sizeof(hints));
@@ -30,7 +32,7 @@ ClientNetwork::ClientNetwork(void) {
 	hints.ai_socktype = SOCK_STREAM;
 	hints.ai_protocol = IPPROTO_TCP;  //TCP connection!!!
 	//resolve server address and port
-	iResult = getaddrinfo("127.0.0.1", DEFAULT_PORT, &hints, &result);
+	iResult = getaddrinfo(ipOfClient.c_str(), OUT_PORT, &hints, &result);
 
 	if (iResult != 0)
 	{
@@ -51,6 +53,9 @@ ClientNetwork::ClientNetwork(void) {
 			WSACleanup();
 			exit(1);
 		}
+
+		std::cout << "\nConnect to socket listening on other side?...\n";
+		getchar();
 
 		// Connect to server.
 		iResult = connect(ConnectSocket, ptr->ai_addr, (int)ptr->ai_addrlen);
