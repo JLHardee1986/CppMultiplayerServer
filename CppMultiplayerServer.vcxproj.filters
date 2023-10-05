@@ -13,6 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\assets">
+      <UniqueIdentifier>{35d433bb-0f44-4303-8bf4-04029260583b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\assets\textures">
+      <UniqueIdentifier>{d7cb9a35-ebbc-4608-8a15-40c3c2e88c56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\assets\textures\tilesets">
+      <UniqueIdentifier>{90f2fb77-c8f4-45ab-afe4-894df5828535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\assets\textures\tilesets\outdoor_with_water">
+      <UniqueIdentifier>{1f1067b4-8cd4-49df-81e0-a352bb865a11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\assets\info">
+      <UniqueIdentifier>{e6492644-03d7-48f1-8309-a8dda78e1588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\assets\info\tilesets">
+      <UniqueIdentifier>{1de576dd-ded0-4762-b174-eaeeff236385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\assets\textures\hero">
+      <UniqueIdentifier>{89312668-ff99-4f8d-a8d4-83c1db88ce16}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClientGame.h">
@@ -34,6 +55,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ServerNetwork.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tilemap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hero.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -59,5 +89,27 @@
     <ClCompile Include="ServerNetwork.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\tilesets\outdoor_with_water\outdoor_with_water.png">
+      <Filter>Resource Files\assets\textures\tilesets\outdoor_with_water</Filter>
+    </Image>
+    <Image Include="assets\textures\hero\hero_idle_sheet.png">
+      <Filter>Resource Files\assets\textures\hero</Filter>
+    </Image>
+    <Image Include="assets\textures\hero\hero_walk_sheet.png">
+      <Filter>Resource Files\assets\textures\hero</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\info\tilesets\outdoor_with_water.dat">
+      <Filter>Resource Files\assets\info\tilesets</Filter>
+    </None>
   </ItemGroup>
 </Project>

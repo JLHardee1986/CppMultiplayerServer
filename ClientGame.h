@@ -3,9 +3,11 @@
 #include <Windows.h>
 #include "ClientNetwork.h"
 
+class Game;
+
 class ClientGame
 {
-
+	
 public:
 
 	ClientGame();
